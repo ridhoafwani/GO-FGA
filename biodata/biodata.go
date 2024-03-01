@@ -14,9 +14,13 @@ func main() {
 	i, err := strconv.Atoi(args)
 	if err != nil {
 		fmt.Println("Error converting arg to int:", err)
-    	return
+		return
 	}
+	if i < 1 || i > len(students) {
+		fmt.Println("Invalid student number")
+		return
+	}
+	var student = students[i-1]
 
-	fmt.Println(students[i-1])
+	student.Print()
 }
-
